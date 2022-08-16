@@ -1,0 +1,47 @@
+{
+  "name": "webclient",
+  "version": "1.0.0",
+  "description": "",
+  "source": "scripts/RootViewController.ts",
+  "browser": "compiledScripts/webclient.js",
+  "types": "compiledScripts/webclient.d.ts",
+  "targets": {
+    "browser": {
+      "includeNodeModules": true
+    },
+    "types": false
+  },
+  "scripts": {
+    "watch": "rollup --config --watch --environment NODE_ENV:development",
+    "build": "rollup --config --environment NODE_ENV:development",
+    "esbuild": "node esbuild.mjs",
+    "esbuild-watch": "node esbuild.watch.mjs",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Mart Ernits",
+  "license": "MIT",
+  "dependencies": {
+    "browser-cjs": "^1.0.3",
+    "browserify": "^17.0.0",
+    "esbuild-plugin-inline-worker": "^0.1.1",
+    "parcel-plugin-inline-worker": "^0.1.0",
+    "socket.io": "^4.5.1",
+    "tsify": "^5.0.4",
+    "uicore-ts": "^1.0.2"
+  },
+  "devDependencies": {
+    "@parcel/transformer-typescript-types": "^2.6.2",
+    "@rollup/plugin-commonjs": "^22.0.1",
+    "@rollup/plugin-node-resolve": "^13.3.0",
+    "@swc/cli": "^0.1.57",
+    "@swc/core": "^1.2.224",
+    "esbuild-wasm": "^0.14.53",
+    "parcel": "^2.6.2",
+    "parcel-transformer-ejs": "^1.0.0",
+    "rollup-plugin-sourcemaps": "^0.6.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "rollup-plugin-typescript2": "^0.32.1",
+    "rollup-plugin-web-worker-loader": "^1.6.1",
+    "typescript": "^4.7.4"
+  }
+}

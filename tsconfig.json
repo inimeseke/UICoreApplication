@@ -1,0 +1,22 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "moduleResolution": "node",
+        "pretty": true,
+        "sourceMap": true,
+        "strictBindCallApply": true,
+        "target": "es2018",
+        "lib": [
+            "es2019"
+        ],
+        "outDir": "./dist",
+        "baseUrl": "./"
+    },
+    "include": [
+        "*.ts"
+    ],
+    "exclude": [
+        "node_modules",
+        "webclient"
+    ]
+}
