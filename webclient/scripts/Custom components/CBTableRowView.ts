@@ -1,6 +1,7 @@
 import {
     FIRST,
-    FIRST_OR_NIL, IF,
+    FIRST_OR_NIL,
+    IF,
     IS,
     IS_NOT,
     nil,
@@ -12,7 +13,6 @@ import {
     YES
 } from "uicore-ts"
 import { CBColor } from "../CBCore/CBColor"
-import { RootViewParameters } from "../RootViewParameters"
 import { CBTableViewCellDescriptor } from "./CBDataView"
 import { CellView } from "./CellView"
 import { LanguageService } from "./LanguageService"
@@ -208,8 +208,8 @@ export class CBTableRowView extends RowView {
     layoutSubviews() {
         
         super.layoutSubviews()
-        
-        const padding = RootViewParameters.paddingLength
+    
+        const padding = this.core.paddingLength
         const labelHeight = padding
         
         const bounds = this.bounds.rectangleWithInset(padding)

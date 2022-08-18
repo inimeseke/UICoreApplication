@@ -1,6 +1,5 @@
 import { UIColor, UIRoute, UIViewController } from "uicore-ts"
 import { CBCore } from "./CBCore/CBCore"
-import { RootViewParameters } from "./RootViewParameters"
 
 
 export class InformationViewController extends UIViewController {
@@ -87,7 +86,7 @@ export class InformationViewController extends UIViewController {
         
         super.layoutViewSubviews()
     
-        const padding = RootViewParameters.paddingLength
+        const padding = this.core.paddingLength
         const labelHeight = padding
     
         // View bounds

@@ -1,5 +1,4 @@
 import { nil, NO, UIButton, UISlideScrollerView, UIView, YES } from "uicore-ts"
-import { RootViewParameters } from "../RootViewParameters"
 
 
 export class StepSliderView extends UIView {
@@ -151,7 +150,7 @@ export class StepSliderView extends UIView {
         
         super.layoutSubviews()
     
-        const padding = RootViewParameters.paddingLength
+        const padding = this.core.paddingLength
     
         this.pageIndicatorsView.frame = this.bounds.rectangleWithInset(padding).rectangleWithHeight(50)
         

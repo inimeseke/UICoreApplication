@@ -1,21 +1,26 @@
 import {
     IS,
-    IS_NOT, IS_UNDEFINED, MAKE_ID,
+    IS_NOT,
+    IS_UNDEFINED,
+    MAKE_ID,
     nil,
     NO,
     UIButton,
-    UIColor, UIDialogView, UIImageView, UIKeyValueStringFilter,
+    UIColor,
+    UIDialogView,
+    UIImageView,
+    UIKeyValueStringFilter,
     UILocalizedTextObject,
     UITableView,
     UITextField,
-    UITextView, UIView,
+    UITextView,
+    UIView,
     YES
 } from "uicore-ts"
 import { CBColor } from "../CBCore/CBColor"
 import { CBCore } from "../CBCore/CBCore"
 import { CBDropdownData, CBDropdownDataItem } from "../CBCore/CBDataInterfaces"
 import { CBSocketClient } from "../CBCore/CBSocketClient"
-import { RootViewParameters } from "../RootViewParameters"
 import { CBCheckbox } from "./CBCheckbox"
 import { LanguageService } from "./LanguageService"
 import { SearchableDropdownRow } from "./SearchableDropdownRow"
@@ -255,7 +260,7 @@ export class SearchableDropdown<T> extends UIButton {
             
             this._dialogView.frame = this.rootView.bounds //this.superview.rectangleInView(this.superview.bounds, this.rootView);
     
-            const padding = RootViewParameters.paddingLength
+            const padding = this.core.paddingLength
             const labelHeight = padding
     
             const searchTextFieldHeight = this.bounds.height
@@ -896,7 +901,7 @@ export class SearchableDropdown<T> extends UIButton {
             
         }
     
-        const padding = RootViewParameters.paddingLength
+        const padding = this.core.paddingLength
         const labelHeight = padding
     
         const result = this.superview.bounds.height - this.frame.max.y - padding
@@ -1435,7 +1440,7 @@ export class SearchableDropdown<T> extends UIButton {
     
         const bounds = this.bounds
     
-        const padding = RootViewParameters.paddingLength
+        const padding = this.core.paddingLength
         const labelHeight = padding
     
         this.updateTitleWithSelection(this.selectedData)

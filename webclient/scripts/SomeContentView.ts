@@ -1,5 +1,4 @@
 import { UIView } from "uicore-ts"
-import { RootViewParameters } from "./RootViewParameters"
 
 
 export class SomeContentView extends UIView {
@@ -25,7 +24,7 @@ export class SomeContentView extends UIView {
         
         super.layoutSubviews()
         
-        const padding = RootViewParameters.paddingLength
+        const padding = this.core.paddingLength
         const labelHeight = padding
         
         const bounds = this.bounds.rectangleWithInset(padding)

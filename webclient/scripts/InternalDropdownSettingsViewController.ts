@@ -1,10 +1,15 @@
 import {
     FIRST,
     IS,
-    IS_DEFINED, IS_NOT,
-    MAKE_ID, nil,
-    NO, UIButton,
-    UIColor, UIRoute, UITableView,
+    IS_DEFINED,
+    IS_NOT,
+    MAKE_ID,
+    nil,
+    NO,
+    UIButton,
+    UIColor,
+    UIRoute,
+    UITableView,
     UITextArea,
     UITextView,
     UIView,
@@ -21,8 +26,6 @@ import { CBDialogViewShower } from "./Custom components/CBDialogViewShower"
 import { CBTextField } from "./Custom components/CBTextField"
 import { LanguageService } from "./Custom components/LanguageService"
 import { SearchableDropdown } from "./Custom components/SearchableDropdown"
-import { RootViewParameters } from "./RootViewParameters"
-
 
 
 
@@ -1188,7 +1191,7 @@ export class InternalDropdownSettingsViewController extends UIViewController {
         
         super.layoutViewSubviews()
     
-        const padding = RootViewParameters.paddingLength
+        const padding = this.core.paddingLength
         const labelHeight = padding
     
         // View bounds

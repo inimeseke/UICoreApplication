@@ -1,11 +1,16 @@
 import {
     FIRST,
     IS,
-    IS_DEFINED, IS_NOT,
-    MAKE_ID, nil,
-    NO, UIButton,
+    IS_DEFINED,
+    IS_NOT,
+    MAKE_ID,
+    nil,
+    NO,
+    UIButton,
     UIColor,
-    UICore, UICoreValues, UIRoute, UITableView,
+    UICoreValues,
+    UIRoute,
+    UITableView,
     UITextArea,
     UITextView,
     UIView,
@@ -22,7 +27,6 @@ import { CBTextField } from "./Custom components/CBTextField"
 import { LanguageService } from "./Custom components/LanguageService"
 import { SearchableDropdown } from "./Custom components/SearchableDropdown"
 import { SearchableDropdownRow } from "./Custom components/SearchableDropdownRow"
-import { RootViewParameters } from "./RootViewParameters"
 
 
 
@@ -591,8 +595,8 @@ export class InternalLanguageSettingsViewController extends UIViewController {
     layoutViewSubviews() {
         
         super.layoutViewSubviews()
-        
-        const padding = RootViewParameters.paddingLength
+    
+        const padding = this.core.paddingLength
         const labelHeight = padding
         
         // View bounds

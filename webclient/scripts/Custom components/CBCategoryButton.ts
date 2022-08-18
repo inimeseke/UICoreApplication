@@ -1,6 +1,5 @@
 import { IS, nil, NO, UIButton, UIColor, UITextView, YES } from "uicore-ts"
 import { CBColor } from "../CBCore/CBColor"
-import { RootViewParameters } from "../RootViewParameters"
 
 
 export class CBCategoryButton extends UIButton {
@@ -65,7 +64,7 @@ export class CBCategoryButton extends UIButton {
     
     
     
-        const padding = RootViewParameters.paddingLength
+        const padding = this.core.paddingLength
         const labelHeight = padding * 1.5
     
         const bounds = this.bounds.rectangleWithInset(padding)

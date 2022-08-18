@@ -2,9 +2,12 @@ import {
     IS,
     nil,
     NO,
-    UIActionIndicator, UIButton,
+    UIActionIndicator,
+    UIButton,
     UIColor,
-    UICore, UICoreValues, UIDialogView, UIImageView,
+    UICoreValues,
+    UIDialogView,
+    UIImageView,
     UIObject,
     UIRectangle,
     UITextView,
@@ -13,7 +16,6 @@ import {
 } from "uicore-ts"
 import { CBColor } from "../CBCore/CBColor"
 import { CBLocalizedTextObject } from "../CBCore/CBDataInterfaces"
-import { RootViewParameters } from "../RootViewParameters"
 import { CBDialogView } from "./CBDialogView"
 import { LanguageService } from "./LanguageService"
 
@@ -75,8 +77,8 @@ export class CBDialogViewShower extends UIObject {
     
     
     getDialogWidth() {
-        
-        const padding = RootViewParameters.paddingLength
+    
+        const padding = this.core.paddingLength
         const labelHeight = padding * 0.75
         
         

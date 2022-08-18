@@ -1,5 +1,4 @@
 import { FIRST_OR_NIL, IF, IS, IS_NOT, nil, NO, RETURNER, UIButton, UIColor, UITextView, UIView, YES } from "uicore-ts"
-import { RootViewParameters } from "../RootViewParameters"
 import { CBFlatButton } from "./CBFlatButton"
 import { LanguageService } from "./LanguageService"
 import { RowView } from "./RowView"
@@ -177,7 +176,7 @@ export class CBDialogView extends UIView {
         
         super.layoutSubviews()
     
-        const padding = RootViewParameters.paddingLength
+        const padding = this.core.paddingLength
         const labelHeight = padding * 0.75
     
         const bounds = this.bounds.rectangleWithInsets(padding * 0.5, padding * 0.5, 0, 0)
@@ -273,7 +272,7 @@ export class CBDialogView extends UIView {
     intrinsicContentHeight(constrainingWidth: number = 0) {
     
     
-        const padding = RootViewParameters.paddingLength
+        const padding = this.core.paddingLength
         const labelHeight = padding * 0.75
     
         function addPaddingIfNeeded(value: number) {

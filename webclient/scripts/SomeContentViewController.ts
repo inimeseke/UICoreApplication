@@ -1,6 +1,4 @@
 import { UIColor, UIRoute, UITextView, UIViewController } from "uicore-ts"
-import { LanguageService } from "./Custom components/LanguageService"
-import { RootViewParameters } from "./RootViewParameters"
 
 
 export class SomeContentViewController extends UIViewController {
@@ -69,7 +67,7 @@ export class SomeContentViewController extends UIViewController {
         
         super.layoutViewSubviews()
         
-        const padding = RootViewParameters.paddingLength
+        const padding = this.core.paddingLength
         const labelHeight = padding
         
         // View bounds

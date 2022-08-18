@@ -19,7 +19,6 @@ import { InformationViewController } from "./InformationViewController"
 import { InternalDropdownSettingsViewController } from "./InternalDropdownSettingsViewController"
 import { InternalLanguageSettingsViewController } from "./InternalLanguageSettingsViewController"
 import { LanguagesDialogView } from "./LanguagesDialogView"
-import { RootViewParameters } from "./RootViewParameters"
 import { SomeContentViewController } from "./SomeContentViewController"
 import { TopBarView } from "./TopBarView"
 
@@ -150,7 +149,7 @@ class RootViewController extends UIRootViewController {
         const topBarHeight = 65
         const bottomBarMinHeight = 100
         this.performDefaultLayout(
-            RootViewParameters.paddingLength,
+            this.core.paddingLength,
             contentViewMaxWidth,
             topBarHeight,
             bottomBarMinHeight

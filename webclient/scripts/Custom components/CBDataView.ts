@@ -3,15 +3,16 @@ import {
     IS_NOT,
     NO,
     UIKeyValueStringSorter,
-    UIStringFilter, UITableView,
+    UIStringFilter,
+    UITableView,
     UITextField,
     UITextView,
     UIView,
-    UIViewBroadcastEvent, ValueOf,
+    UIViewBroadcastEvent,
+    ValueOf,
     YES
 } from "uicore-ts"
 import { CBLocalizedTextObject } from "../CBCore/CBDataInterfaces"
-import { RootViewParameters } from "../RootViewParameters"
 import { CBTableHeaderView } from "./CBTableHeaderView"
 import { CBTableRowView } from "./CBTableRowView"
 import { CellView } from "./CellView"
@@ -341,9 +342,9 @@ export class CBDataView extends UIView {
     layoutSubviews() {
         
         super.layoutSubviews()
-        
-        
-        const padding = RootViewParameters.paddingLength
+    
+    
+        const padding = this.core.paddingLength
         const labelHeight = padding
         
         const bounds = this.bounds.rectangleWithInset(padding)
@@ -391,8 +392,8 @@ export class CBDataView extends UIView {
     
     
     intrinsicContentHeight(constrainingWidth: number = 0): number {
-        
-        const padding = RootViewParameters.paddingLength
+    
+        const padding = this.core.paddingLength
         const labelHeight = padding
         
         var result = padding * 2 + padding * 2 + padding + 50 + padding +

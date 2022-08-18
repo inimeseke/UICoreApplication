@@ -1,6 +1,5 @@
-import { IS, nil, NO, UIButton, UIColor, UIImageView, UITextView, UIView, YES } from "uicore-ts"
+import { IS, nil, NO, UIButton, UIColor, UIImageView, UITextView, YES } from "uicore-ts"
 import { CBColor } from "../CBCore/CBColor"
-import { RootViewParameters } from "../RootViewParameters"
 
 
 export class CellView extends UIButton {
@@ -182,8 +181,8 @@ export class CellView extends UIButton {
     layoutSubviews() {
         
         super.layoutSubviews()
-        
-        const padding = RootViewParameters.paddingLength
+    
+        const padding = this.core.paddingLength
         const labelHeight = padding
         
         const bounds = this.bounds
@@ -222,8 +221,8 @@ export class CellView extends UIButton {
     
     
     intrinsicContentHeight(constrainingWidth = 0) {
-        
-        const padding = RootViewParameters.paddingLength
+    
+        const padding = this.core.paddingLength
         const labelHeight = padding
         
         const result = [
