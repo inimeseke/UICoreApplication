@@ -3,8 +3,7 @@ import {
     IS,
     IS_DEFINED,
     IS_NOT,
-    nil,
-    UICoreValues,
+    nil, UICore,
     UILanguageService,
     UILocalizedTextObject,
     UIRoute,
@@ -69,8 +68,8 @@ export class LanguageService implements UILanguageService {
     
     
     static broadcastLanguageChangeEvent() {
-        
-        UICoreValues.main.rootViewController.view.broadcastEventInSubtree({
+    
+        UICore.main.rootViewController.view.broadcastEventInSubtree({
             name: UIView.broadcastEventName.LanguageChanged,
             parameters: {}
         })
@@ -168,8 +167,8 @@ export class LanguageService implements UILanguageService {
                 var parameterString
                 
                 if (parameter instanceof Object) {
-                    
-                    parameterString = UICoreValues.languageService.stringForCurrentLanguage(parameter as UILocalizedTextObject)
+    
+                    parameterString = UICore.languageService.stringForCurrentLanguage(parameter as UILocalizedTextObject)
                     
                 }
                 else {
@@ -316,7 +315,7 @@ export class LanguageService implements UILanguageService {
 
 
 
-UICoreValues.languageService = LanguageService
+UICore.languageService = LanguageService
 
 
 
