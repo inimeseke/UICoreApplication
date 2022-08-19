@@ -1,9 +1,11 @@
 import {
     IS,
     nil,
-    NO, UIButton,
+    NO,
+    UIButton,
     UIColor,
-    UICoreValues, UIImageView,
+    UICore,
+    UIImageView,
     UIRectangle,
     UIRoute,
     UITextView,
@@ -169,18 +171,18 @@ export class LanguagesDialogView extends UIView {
     didReceiveBroadcastEvent(event: UIViewBroadcastEvent) {
         
         super.didReceiveBroadcastEvent(event)
-        
-        
-        if (event.name == UICoreValues.broadcastEventName.RouteDidChange && this._previousLanguageKey !=
+    
+    
+        if (event.name == UICore.broadcastEventName.RouteDidChange && this._previousLanguageKey !=
             LanguageService.currentLanguageKey) {
-            
+        
             this._previousLanguageKey = LanguageService.currentLanguageKey
-            
+        
             this.rootView.broadcastEventInSubtree({
-                
+            
                 name: UIView.broadcastEventName.LanguageChanged,
                 parameters: nil
-                
+            
             })
             
             

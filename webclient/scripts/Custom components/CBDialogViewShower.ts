@@ -5,7 +5,7 @@ import {
     UIActionIndicator,
     UIButton,
     UIColor,
-    UICoreValues,
+    UICore,
     UIDialogView,
     UIImageView,
     UIObject,
@@ -27,13 +27,15 @@ export class CBDialogViewShower extends UIObject {
     static nextShowDialogFunctions: Function[] = []
     static currentActionIndicatorDialogViewShower: CBDialogViewShower = nil
     
-    constructor(elementID?: string) {
+    constructor(elementID?: string, core?: UICore) {
         
         super()
         
         this.dialogView = new UIDialogView<CBDialogView>()
         this.dialogView.view = new CBDialogView(elementID)
         this.dialogView.view.backgroundColor = UIColor.whiteColor
+        
+        this.dialogView.core = this.dialogView.core || core
         
         const dialogLayoutFunction = this.dialogView.layoutSubviews.bind(this.dialogView)
         this.dialogView.layoutSubviews = function (this: CBDialogViewShower) {
@@ -50,7 +52,7 @@ export class CBDialogViewShower extends UIObject {
                 0.5
             ).rectangleWithWidth(this.getDialogWidth(), 0.5)
             
-            this.dialogView.frame = UICoreValues.main.rootViewController.view.bounds
+            this.dialogView.frame = this.dialogView.core.rootViewController.view.bounds
             
             
         }.bind(this)
@@ -78,7 +80,7 @@ export class CBDialogViewShower extends UIObject {
     
     getDialogWidth() {
     
-        const padding = this.core.paddingLength
+        const padding = this.dialogView.core.paddingLength
         const labelHeight = padding * 0.75
         
         

@@ -1,27 +1,19 @@
-import {
-    FIRST_OR_NIL,
-    IF,
-    IS,
-    IS_NIL,
-    IS_NOT,
-    MAKE_ID,
-    nil,
-    NO,
-    RETURNER,
-    UIObject,
-    UIViewBroadcastEvent,
-    YES
-} from "uicore-ts"
+import { FIRST_OR_NIL, IF, IS, IS_NIL, IS_NOT, MAKE_ID, nil, NO, RETURNER, UIObject, YES } from "uicore-ts"
 import { CBDialogViewShower } from "../Custom components/CBDialogViewShower"
 import { CBCore } from "./CBCore"
 import {
-    CBSocketHandshakeInitMessage, CBSocketHandshakeResponseMessage, CBSocketMessage, CBSocketMessageCompletionFunction,
-    CBSocketMessageHandlerFunction, CBSocketMessageSendResponseFunction, CBSocketMultipleMessage,
-    CBSocketMultipleMessagecompletionFunction, CBSocketMultipleMessageObject, CBUserProfile, SocketClientInterface
+    CBSocketHandshakeInitMessage,
+    CBSocketHandshakeResponseMessage,
+    CBSocketMessage,
+    CBSocketMessageCompletionFunction,
+    CBSocketMessageHandlerFunction,
+    CBSocketMessageSendResponseFunction,
+    CBSocketMultipleMessage,
+    CBSocketMultipleMessagecompletionFunction,
+    CBSocketMultipleMessageObject,
+    SocketClientInterface
 } from "./CBDataInterfaces"
-import { CBServerClient } from "./CBServerClient"
 import { CBSocketCallbackHolder } from "./CBSocketCallbackHolder"
-
 
 
 
@@ -51,6 +43,17 @@ declare interface CBSocketClientErrorMessage {
     _isCBSocketErrorMessage: boolean;
     
     messageData: any;
+    
+}
+
+
+declare namespace SocketIO {
+    
+    class Socket {
+    
+    
+    
+    }
     
 }
 

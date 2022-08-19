@@ -80,7 +80,7 @@ class RootViewController extends UIRootViewController {
         this.view.addSubview(this.bottomBarView)
         
         // Initializing CBCore if needed
-        CBCore.sharedInstance
+        CBCore.sharedInstance.viewCore = this.view.core
         
     }
     

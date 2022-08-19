@@ -1,13 +1,14 @@
 import {
-    FIRST, FIRST_OR_NIL,
+    FIRST,
+    FIRST_OR_NIL,
     IS,
     IS_NOT,
     nil,
-    UICore, UICoreValues, UILink,
+    UICore,
+    UILink,
     UIObject,
     UIRoute,
     UIViewBroadcastEvent,
-    UIViewController,
     YES
 } from "uicore-ts"
 import { LanguageService } from "../Custom components/LanguageService"
@@ -22,6 +23,8 @@ declare const CBCoreInitializerObject: any
 export class CBCore extends UIObject {
     
     private static _sharedInstance: CBCore
+    
+    viewCore: UICore
     
     _isUserLoggedIn: boolean = nil
     _cachedMinimizedChatInquiryIDs: string[] = nil
@@ -94,10 +97,11 @@ export class CBCore extends UIObject {
     }
     
     broadcastMessageInRootViewTree(message: UIViewBroadcastEvent) {
-        
-        (UICoreValues.main.rootViewController as UIViewController).view.broadcastEventInSubtree(message)
+    
+        this.viewCore.rootViewController.view.broadcastEventInSubtree(message)
         
     }
+    
     
     
     
@@ -177,11 +181,13 @@ export class CBCore extends UIObject {
     }
     
     private updateLinkTargets() {
-        UICoreValues.main.rootViewController.view.forEachViewInSubtree(function (view) {
+    
+        this.viewCore.rootViewController.view.forEachViewInSubtree(function (view) {
             if (view instanceof UILink) {
                 view.updateTarget()
             }
         })
+    
     }
     
     get isUserLoggedIn() {

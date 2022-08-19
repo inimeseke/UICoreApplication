@@ -8,7 +8,6 @@ import {
     NO,
     UIButton,
     UIColor,
-    UICoreValues,
     UIRoute,
     UITableView,
     UITextArea,
@@ -516,7 +515,7 @@ export class InternalLanguageSettingsViewController extends UIViewController {
                             LanguageService.useStoredLanguageValues(response)
                             this.loadData()
                             LanguageService.broadcastLanguageChangeEvent()
-                            UICoreValues.main.rootViewController.view.setNeedsLayout()
+                            this.view.rootView.setNeedsLayout()
                         }
                         else {
                             CBDialogViewShower.alert("Failed to save dropdown data.")
