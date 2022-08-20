@@ -65,16 +65,21 @@ export class CBCore extends UIObject {
             }
             
         }.bind(this))
-        
-        
+    
+    
         //this.checkIfUserIsAuthenticated();
-        
+    
         this.didSetLanguageKey()
-        
-        
+    
+    
     }
     
     
+    static initWithViewCore(viewCore: UICore) {
+        
+        CBCore.sharedInstance.viewCore = viewCore
+        
+    }
     
     
     
